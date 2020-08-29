@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import UserList from "@/views/UserList";
+import UserDetail from "@/views/UserDetail";
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,10 @@ const routes = [
             {
                 path: "",
                 component: UserList
+            },
+            {
+                path: ":id",
+                component:UserDetail,
             }
         ]
     }
