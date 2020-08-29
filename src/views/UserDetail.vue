@@ -4,5 +4,9 @@
 
 <script>
 export default {
+  beforeRouterEnter(to, from, next) {
+    console.log('beforeRouterEnter', to, from);
+    next()
+  }
 }
 </script>
