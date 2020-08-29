@@ -29,6 +29,19 @@ export default new Vuex.Store({
                 context.commit("ADD_USER",data)
             })
         },
+        DEL_USER(context, data) {
+            //http://localhost:3000/user/1
+            fetch("http://localhost:3000/user/"+data, {
+                method: "DELETE",
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+                .then((res) => {
+                    return res.json()
+                    //也可以用return
+            })
+        },
     },
     mutations: {
         SET_USER_LIST(state, data) {

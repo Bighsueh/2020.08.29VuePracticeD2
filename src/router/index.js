@@ -32,8 +32,9 @@ const routes = [
             {
                 path: ":id",
                 component: UserDetail,
+                //進入前檢查，若從/user以外轉入則轉出
                 beforeEnter(to, from, next) {
-                    if(from.path != "/user"){
+                    if(from.path !== "/user"){
                         next("/user")
                     }else{
                         next()
