@@ -33,8 +33,11 @@ const routes = [
                 path: ":id",
                 component: UserDetail,
                 beforeEnter(to, from, next) {
-                    console.log('beforeEnter', to, from);
-                    next()
+                    if(from.path != "/user"){
+                        next("/user")
+                    }else{
+                        next()
+                    }
                 }
             }
         ]

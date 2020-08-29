@@ -26,7 +26,7 @@ export default new Vuex.Store({
                 .then((res) => {
                     return res.json()
                 }).then((data) => {
-                console.log(data)
+                context.commit("ADD_USER",data)
             })
         },
     },
