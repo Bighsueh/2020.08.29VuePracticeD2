@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>This is UserList.</p>
-    <router-link v-for="item in users" :key="item.id" :to="'/user/'+item.id">{{item.name}}<br></router-link>
+    <router-link v-for="item in users" :key="item.id" :to="'/user/'+item.id">{{ item.name }}<br></router-link>
 
     <p>
       Name: <input type="text" v-model.trim="name">
@@ -21,25 +21,25 @@
 
 <script>
 export default {
-  data(){
-    return{
-      name:"",
-      gender:0,
+  data() {
+    return {
+      name: "",
+      gender: 0,
     }
   },
   created() {
     this.$store.dispatch("GET_USER_LIST")
   },
-  computed:{
-    users(){
+  computed: {
+    users() {
       return this.$store.state.users
     }
   },
-  methods:{
-    clickHandler(){
-      this.$store.dispatch("ADD_USER",{
-        name:this.name,
-        gender:this.gender
+  methods: {
+    clickHandler() {
+      this.$store.dispatch("ADD_USER", {
+        name: this.name,
+        gender: this.gender
       })
       this.name = ""
       this.gender = 0

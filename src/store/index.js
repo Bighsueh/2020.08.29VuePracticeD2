@@ -29,7 +29,6 @@ export default new Vuex.Store({
                 console.log(data)
             })
         },
-
     },
     mutations: {
         SET_USER_LIST(state, data) {
@@ -39,5 +38,4 @@ export default new Vuex.Store({
             state.users.push(data);
         }
     }
-
 })
