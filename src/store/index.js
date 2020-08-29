@@ -15,16 +15,21 @@ export default new Vuex.Store({
                 context.commit("SET_USER_LIST", data)
             ])
         },
-        ADD_USER(context,data){
-            fetch("http://localhost:3000/user",{
+        ADD_USER(context, data) {
+            fetch("http://localhost:3000/user", {
                 body: JSON.stringify(data),
-                method: "POST",})
-                .then((res)=>{
-                    return res.json()
-                }).then((data)=>{
-                    console.log(data)
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                }
             })
-        }
+                .then((res) => {
+                    return res.json()
+                }).then((data) => {
+                console.log(data)
+            })
+        },
+
     },
     mutations: {
         SET_USER_LIST(state, data) {
